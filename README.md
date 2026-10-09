@@ -9,7 +9,7 @@
 [Link for Source Code](https://github.com/9704066/gameDev/tree/main/src/SubmarineGame)
 
 ## Game Overview
-An object oriented game with multiple levels, powerups, enemy variations, 
+An object oriented game with multiple levels, three types of powerup, enemy variations, and assets for the player. Gameplay includes firing of projectiles, permanent upgrades through the use of powerups, level progression, and boss combat, as well as a start screen and game over screen.  
 
 ## How to Run
 Built with Processing.
@@ -17,21 +17,18 @@ Processing version: 4.0.1
 Main sketch and project folder: SubmarineGame
 Required libraries, if any: none
 
-[Explain how to open and run the project.]
+Open the folder titled "SubmarineGame" and inside click on the file called "submarineGame.pde" then run the program in processing.
 
 ## Controls
 Keystroke is required to start the game, mouse to move the character, lmb or rmb to shoot projectiles
 
-## Required Foundation — 2 Points
-
 ### Three Power-Up Types
 1. Health Up — Grants the player ten additional health
-2. [Name] — Grants the player five additional damage
+2. Damage — Grants the player five additional damage for their projectiles
 3. Turret Up — Grants the player an additional turret to shoot; maximum turret count of three.
 
 ### Levels
-[Explain what triggers progression and what changes
-between levels. State the current implementation status.]
+Levels are currently incomplete
 
 ## My Chosen Additional Systems
 Choose at least two:
@@ -41,23 +38,16 @@ Choose at least two:
 - Game-over screen with saved results
 
 My choices:
-1. [System — intended behavior and current status]
-2. [System — intended behavior and current status]
+1. Boss - intended to appear at the end of a level as a required skill check to continue to the next level. Currently unfinished.
+2. Game statistics - variables that are tracked such as the amount of damage dealt, health lost, power ups taken, or levels completed. Intended to be shown to the player at the end of the game to give them some form of recap of their gameplay
 
 ## Testing
 Test actions:
 Expected result:
 Actual result:
 
-## Project Files and Assets
-[Identify the main sketch, other tabs,
-and image/audio folders.]
-
-Asset credits:
-[Credit outside assets and identify assets you created.]
-
 ## Known Issues
-[Describe unfinished behavior or known bugs honestly.]
+The sound currently does not function in the game, and all of the corresponding code has been commented out in the program.
 
 ## Next Development Task
-[Name one specific behavior you will build or fix next.]
+The next task is to create some form of level progression for the game
