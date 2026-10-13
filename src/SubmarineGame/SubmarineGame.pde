@@ -1,12 +1,13 @@
 // Jonah Gong | 17 Sept 2026 | SubmarineGame
 //import processing.sound.*; | Sound was not working for this project
 //SoundFile laserSound;
+
 ArrayList<Laser> lasers = new ArrayList<Laser>();
 ArrayList<Seaweed> seaweeds = new ArrayList<Seaweed>();
 ArrayList<PowerUp> powerups = new ArrayList<PowerUp>();
 Submarine s1;
 Boss boss01;
-Timer seaweedDist, puDist;
+Timer seaweedDist, puDist, levelTimer;
 int score, seaweedCount, seaweedsOffScreen, laserDamage, level, maxPossibleSpeed;
 boolean play;
 PImage gameOverImage, gameStartImage;
@@ -15,7 +16,9 @@ PImage gameOverImage, gameStartImage;
 void setup() {
 //  laserSound = new SoundFile(this,"laserSound1.mp3");
   size(500, 500);
-  boss01 = new Boss(-200,200,1);
+  level = 1;
+  levelTimer = new Timer(6000);
+  boss01 = new Boss(-200,200,level);
   s1 = new Submarine();
   seaweedDist = new Timer(2000);
   maxPossibleSpeed = 5;
@@ -29,6 +32,7 @@ void setup() {
   play = false;
   gameOverImage = loadImage("gameOver.png");
   gameStartImage = loadImage("gameStart.png");
+  levelTimer.start();
 }
 
 void draw() {
@@ -85,8 +89,20 @@ void draw() {
         powerups.remove(p);
       //println(powerups.size());
     }
-    boss01.display();
-    boss01.move();
+    if (levelTimer.isFinished() == true) {
+      boss01.isOnScreen = true;
+      if (boss01.isOnScreen == true) {
+        boss01.display();
+        boss01.move();
+      }
+      if (boss01.health < 1) {
+        boss01.isOnScreen = false;
+        level +=1;
+        levelTimer.start();
+      }
+     
+    }
+    
     for (int i = 0; i <lasers.size(); i++) {
       Laser l = lasers.get(i);
       for (int j = 0; j <seaweeds.size(); j++) {
@@ -95,6 +111,10 @@ void draw() {
           s.health -= laserDamage;
           lasers.remove(l);
           
+        }
+        if (l.isHitBoss(boss01)) {
+          boss01.health -= laserDamage;
+          lasers.remove(l);
         }
       }
       l.display();
@@ -117,6 +137,7 @@ void draw() {
       gameOver();
     }
     infoPanel();
+    
   }
 }
 
