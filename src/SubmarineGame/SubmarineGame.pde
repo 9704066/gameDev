@@ -17,7 +17,7 @@ void setup() {
 //  laserSound = new SoundFile(this,"laserSound1.mp3");
   size(500, 500);
   level = 1;
-  levelTimer = new Timer(6000);
+  levelTimer = new Timer(60000);
   boss01 = new Boss(-200,200,level);
   s1 = new Submarine();
   seaweedDist = new Timer(2000);
