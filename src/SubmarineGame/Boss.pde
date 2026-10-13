@@ -1,5 +1,5 @@
 class Boss {
-  int x, y, w, h, duration, health, lvl, speed;
+  int x, y, size, duration, health, lvl, speed;
   boolean isHit, isOnScreen;
   PImage b1;
 
@@ -8,10 +8,9 @@ class Boss {
     this.x = x;
     this.y = y;
     this.lvl = lvl;
-    w = 200;
-    h = 100;
+    size = 200;
     duration = 10000;
-    health = 10000;
+    health = lvl*2000;
     speed = 1;
     isOnScreen = true;
     isHit = false;
@@ -30,7 +29,7 @@ class Boss {
   void display() {
     //image(b1,x,y);
     fill (255,0,0);
-    ellipse(x,y,w,h);
+    ellipse(x,y,size,size);
     fill(255);
     text(health,x,y); 
   }
