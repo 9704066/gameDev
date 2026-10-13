@@ -28,7 +28,7 @@ Keystroke is required to start the game, mouse to move the character, lmb or rmb
 3. Turret Up — Grants the player an additional turret to shoot; maximum turret count of three.
 
 ### Levels
-Levels are currently incomplete
+There is currently a single 60 second level. At the end of the level, a boss fight is initiated.
 
 ## My Chosen Additional Systems
 Choose at least two:
