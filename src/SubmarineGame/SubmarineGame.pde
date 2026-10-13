@@ -97,6 +97,7 @@ void draw() {
       }
       if (boss01.health < 1) {
         boss01.isOnScreen = false;
+        boss01.y += 2000
         level +=1;
         levelTimer.start();
       }
